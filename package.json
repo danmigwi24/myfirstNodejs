@@ -1,0 +1,16 @@
+{
+  "name": "nodetutorial",
+  "version": "1.0.0",
+  "description": "Node Js Tutorial to help me create well precised REST APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Migwi Kimani",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {}
+}

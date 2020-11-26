@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NODEJS system</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2>Login</h2>
+    </div>
+    <form method="post" action="/" id="form">
+        <div class="input-group">
+            <label>UserName</label>
+            <input type="text" name="username">
+        </div><br>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="text" name="password">
+        </div><br>
+
+        <div class="input-group">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#form').submit((event) => {
+                event.preventDefault();
+
+                $.ajax({
+                    url: '/',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: JSON.stringify($('#form').serializeArray()),
+                    success: (response) => {
+                        console.log('Successfully gotten response');
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
